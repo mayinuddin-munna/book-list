@@ -42,12 +42,6 @@ const Header = () => {
                     <Link to="about-instructor">About Instructor</Link>
                   </li>
                   <li>
-                    <Link to="country-details">Country Details</Link>
-                  </li>
-                  <li>
-                    <Link to="course-details">Course Details</Link>
-                  </li>
-                  <li>
                     <Link to="apply-online">Apply Online</Link>
                   </li>
                 </ul>
@@ -61,7 +55,7 @@ const Header = () => {
             <div className="icon-part">
               <ul>
                 <li id="search">
-                  <Link to="#">
+                  <Link to="/">
                     <img src={search} alt="" />
                   </Link>
                 </li>
