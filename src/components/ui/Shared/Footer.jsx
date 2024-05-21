@@ -1,6 +1,7 @@
 import newsletter from "../../../assets/img/icon/newslater.png";
 import bell from "../../../assets/img/icon/bell.png";
 import location from "../../../assets/img/icon/location-02.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -34,10 +35,13 @@ const Footer = () => {
                         aria-required="true"
                       />
                       <div className="btn-wrap">
-                        <a href="service-single.html" className="subscribe-btn">
+                        <Link
+                          href="service-single.html"
+                          className="subscribe-btn"
+                        >
                           <img src={bell} alt="" />
                           subscribe
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -52,22 +56,22 @@ const Footer = () => {
                   <h4 className="widget-headline">Important Links</h4>
                   <ul>
                     <li>
-                      <a href="#">Terms and conditions</a>
+                      <Link to="/">Terms and conditions</Link>
                     </li>
                     <li>
-                      <a href="#">Disclaimer and copyright</a>
+                      <Link to="/">Disclaimer and copyright</Link>
                     </li>
                     <li>
-                      <a href="#">Cookie policy</a>
+                      <Link to="/">Cookie policy</Link>
                     </li>
                     <li>
-                      <a href="#">Privacy policy</a>
+                      <Link to="/">Privacy policy</Link>
                     </li>
                     <li>
-                      <a href="#">Equality and diversity</a>
+                      <Link to="/">Equality and diversity</Link>
                     </li>
                     <li>
-                      <a href="#">Complaints procedure</a>
+                      <Link to="/">Complaints procedure</Link>
                     </li>
                   </ul>
                 </div>
@@ -77,19 +81,19 @@ const Footer = () => {
                   <h4 className="widget-headline">Site Highlight</h4>
                   <ul>
                     <li>
-                      <a href="#">Student videos</a>
+                      <Link to="/">Student videos</Link>
                     </li>
                     <li>
-                      <a href="#">Photo gallery</a>
+                      <Link to="/">Photo gallery</Link>
                     </li>
                     <li>
-                      <a href="#">TSC prospectus</a>
+                      <Link to="/">TSC prospectus</Link>
                     </li>
                     <li>
-                      <a href="#">Student newsletter</a>
+                      <Link to="/">Student newsletter</Link>
                     </li>
                     <li>
-                      <a href="#">Student portal</a>
+                      <Link to="/">Student portal</Link>
                     </li>
                   </ul>
                 </div>
@@ -99,22 +103,22 @@ const Footer = () => {
                   <h4 className="widget-headline">Help Center</h4>
                   <ul>
                     <li>
-                      <a href="#">Courses</a>
+                      <Link to="/">Courses</Link>
                     </li>
                     <li>
-                      <a href="#">How to apply for admission</a>
+                      <Link to="/">How to apply for admission</Link>
                     </li>
                     <li>
-                      <a href="#">Admission Documents</a>
+                      <Link to="/">Admission Documents</Link>
                     </li>
                     <li>
-                      <a href="#">Frequently asked questions</a>
+                      <Link to="/">Frequently asked questions</Link>
                     </li>
                     <li>
-                      <a href="#">Student accommodation</a>
+                      <Link to="/">Student accommodation</Link>
                     </li>
                     <li>
-                      <a href="#">Student Jobs</a>
+                      <Link to="/">Student Jobs</Link>
                     </li>
                   </ul>
                 </div>
@@ -124,19 +128,19 @@ const Footer = () => {
                   <h4 className="widget-headline">Services</h4>
                   <ul>
                     <li>
-                      <a href="#">Counselling</a>
+                      <Link to="/">Counselling</Link>
                     </li>
                     <li>
-                      <a href="#">Test Preparation</a>
+                      <Link to="/">Test Preparation</Link>
                     </li>
                     <li>
-                      <a href="#">Admission</a>
+                      <Link to="/">Admission</Link>
                     </li>
                     <li>
-                      <a href="#">Education Loan</a>
+                      <Link to="/">Education Loan</Link>
                     </li>
                     <li>
-                      <a href="#">Visa Processing</a>
+                      <Link to="/">Visa Processing</Link>
                     </li>
                   </ul>
                 </div>
@@ -170,19 +174,19 @@ const Footer = () => {
                 <div className="footer-social-area">
                   <ul className="social-icon-02">
                     <li>
-                      <a href="#0">
+                      <Link href="#0">
                         <i className="fab fa-facebook-f"></i>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#0">
+                      <Link href="#0">
                         <i className="fab fa-instagram"></i>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#0">
+                      <Link href="#0">
                         <i className="fab fa-linkedin-in"></i>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>

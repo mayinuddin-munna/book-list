@@ -1,9 +1,10 @@
 import Ellipse1 from '../../assets/img/shapes/Ellipse-01.png';
-import Ellipse2 from '../../assets/img/shapes/Ellipse-01.png';
-import Vector from '../../assets/img/shapes/Ellipse-01.png';
-import plane from '../../assets/img/shapes/Ellipse-01.png';
-import location from '../../assets/img/shapes/Ellipse-01.png';
-import header from '../../assets/img/shapes/Ellipse-01.png';
+import Ellipse2 from '../../assets/img/shapes/Ellipse-02.png';
+import Vector from '../../assets/img/shapes/plane.png';
+import plane from '../../assets/img/shapes/Ellipse-04.png';
+import location from '../../assets/img/shapes/Ellipse-03.png';
+import header from '../../assets/img/header/header-img.png';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -15,14 +16,14 @@ const Banner = () => {
                             <div className="banner-inner">
                                 <p className="subtitle">SPECIAL OFFER FIRST CUSTOMER</p>
                                 <h1 className="title">Your <span>success</span> journey start with us!</h1>
-                                <p>Eduplan Education Can Fulfil Your International Education Dream <br/> As Per Your Best
+                                <p>Education Plan Education Can Fulfil Your International Education Dream <br/> As Per Your Best
                                     Fit with world top universities and collages.</p>
                                 <div className="header-btn">
                                     <div className="btn-wrap">
-                                        <a href="#0" className="btn-common flat-btn btn-active">apply online</a>
+                                        <Link to="/" className="btn-common flat-btn btn-active">apply online</Link>
                                     </div>
                                     <div className="btn-wrap margin-left-20">
-                                        <a href="contact.html" className="btn-common fill-btn">Discover</a>
+                                        <Link to="contact" className="btn-common fill-btn">Discover</Link>
                                     </div>
                                 </div>
                             </div>

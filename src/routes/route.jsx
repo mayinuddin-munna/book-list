@@ -7,11 +7,13 @@ import Service from "../pages/Steps/Service";
 import AboutInstructor from "../pages/AboutInstructor/AboutInstructor";
 import Instructors from "../pages/Instructors/Instructors";
 import ApplyOnline from "../pages/ApplyOnline/ApplyOnline";
+import Error from "../components/ui/Shared/Error";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
+    errorElement: <Error />,
     children: [
       {
         path: "/",
