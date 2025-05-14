@@ -1,23 +1,27 @@
-import { StudentModel } from './dua.model';
-import { Student } from './dua.interface';
+import { getDBConnection } from '../../db';
+import { Category, Dua, SubCategory } from './dua.interface';
 
-const createStudentIntoDB = async (student: Student) => {
-  const result = await StudentModel.create(student);
-  return result;
+const getAllCategoriesIntoDB = async (): Promise<Category[]> => {
+  const result = await getDBConnection();
+  return result.all('SELECT * FROM category');
 };
 
-const getAllStudentsFromDB = async () => {
-  const result = await StudentModel.find();
-  return result;
+const getAllSubCategoriesFromDB = async (
+  categoryId: string,
+): Promise<SubCategory[]> => {
+  const result = await getDBConnection();
+  return result.all('SELECT * FROM sub_category WHERE cat_id = ?', [
+    categoryId,
+  ]);
 };
 
-const getSingleStudentFromDB = async (id: string) => {
-  const result = await StudentModel.findOne({ id });
-  return result;
+const getAllDuaFromDB = async (subCategoryId: string): Promise<Dua[]> => {
+  const result = await getDBConnection();
+  return result.all('SELECT * FROM dua WHERE subcat_id = ?', [subCategoryId]);
 };
 
 export const StudentServices = {
-  createStudentIntoDB,
-  getAllStudentsFromDB,
-  getSingleStudentFromDB,
+  getAllCategoriesIntoDB,
+  getAllSubCategoriesFromDB,
+  getAllDuaFromDB,
 };

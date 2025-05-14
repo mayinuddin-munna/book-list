@@ -1,52 +1,47 @@
+import httpStatus from 'http-status';
 import { Request, Response } from 'express';
 import { StudentServices } from './dua.service';
-import studentValidationSchema from './dua.validation';
 import sendResponse from '../../utils/sendResponse';
-import httpStatus from 'http-status';
 import catchAsync from '../../utils/catchAsync';
 
-const createStudent = catchAsync(async (req: Request, res: Response) => {
-  const { student: studentData } = req.body;
-
-  // data validation schema using zod
-  const zodParseData = studentValidationSchema.parse(studentData);
-
-  const result = await StudentServices.createStudentIntoDB(zodParseData);
+const getAllCategories = catchAsync(async (req: Request, res: Response) => {
+  const result = await StudentServices.getAllCategoriesIntoDB();
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: '... is retrieved successfully',
+    message: 'All categories is retrieved successfully',
     data: result,
   });
 });
 
-const getAllStudents = catchAsync(async (req: Request, res: Response) => {
-  const result = await StudentServices.getAllStudentsFromDB();
+const getAllSubCategories = catchAsync(async (req: Request, res: Response) => {
+  const { categoryId } = req.params;
+  const result = await StudentServices.getAllSubCategoriesFromDB(categoryId);
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: '... is retrieved successfully',
+    message: 'Sub categories is retrieved successfully',
     data: result,
   });
 });
 
-const getSingleStudent = catchAsync(async (req: Request, res: Response) => {
-  const { studentId } = req.params;
+const getAllDuas = catchAsync(async (req: Request, res: Response) => {
+  const { subCategoryId } = req.params;
 
-  const result = await StudentServices.getSingleStudentFromDB(studentId);
+  const result = await StudentServices.getAllDuaFromDB(subCategoryId);
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: '... is retrieved successfully',
+    message: 'All Dua is retrieved successfully',
     data: result,
   });
 });
 
-export const StudentControllers = {
-  createStudent,
-  getAllStudents,
-  getSingleStudent,
+export const DuaControllers = {
+  getAllCategories,
+  getAllSubCategories,
+  getAllDuas,
 };

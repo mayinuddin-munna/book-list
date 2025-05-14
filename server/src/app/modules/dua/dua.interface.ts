@@ -1,38 +1,16 @@
-export type UserName = {
-  firstName: string;
-  middleName?: string;
-  lastName: string;
-};
+export interface Category {
+  id: number;
+  cat_name: string;
+}
 
-export type Guardian = {
-  fatherName: string;
-  fatherOccupation: string;
-  fatherContactNo: string;
-  motherName: string;
-  motherOccupation: string;
-  motherContactNo: string;
-};
+export interface SubCategory {
+  id: number;
+  subcat_name: string;
+  cat_id: number;
+}
 
-export type LocalGuardian = {
-  name: string;
-  occupation: string;
-  contactNo: string;
-  address: string;
-};
-
-export type Student = {
-  id: string;
-  name: UserName;
-  gender: 'male' | 'female';
-  dateOfBirth?: string;
-  email: string;
-  contactNo: string;
-  emergencyContactNo: string;
-  bloodGroup?: 'A+' | 'A-' | 'B+' | 'B-' | 'AB+' | 'AB-' | 'O+' | 'O-';
-  presentAddress: string;
-  permanentAddress: string;
-  guardian: Guardian;
-  localGuardian: LocalGuardian;
-  profileImg?: string;
-  isActive: 'active' | 'blocked';
-};
+export interface Dua {
+  id: number;
+  dua_name: string;
+  subcat_id: number;
+}
