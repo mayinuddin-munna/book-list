@@ -28,9 +28,9 @@ const getAllSubCategories = catchAsync(async (req: Request, res: Response) => {
 });
 
 const getAllDuas = catchAsync(async (req: Request, res: Response) => {
-  const { subCategoryId } = req.params;
+  const { categoryId } = req.params;
 
-  const result = await StudentServices.getAllDuaFromDB(subCategoryId);
+  const result = await StudentServices.getAllDuaFromDB(categoryId);
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
