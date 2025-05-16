@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.get('/categories', DuaControllers.getAllCategories);
 router.get('/categories/:categoryId', DuaControllers.getAllSubCategories);
+router.get('/all', DuaControllers.getAllDuas);
 router.get('/duas/:categoryId', DuaControllers.getAllDuas);
 
 export const DuaRoutes = router;

@@ -16,7 +16,14 @@ const getAllSubCategoriesFromDB = async (
   ]);
 };
 
-const getAllDuaFromDB = async (subCategoryId: string): Promise<Dua[]> => {
+const getAllDuaFromDB = async (): Promise<Dua[]> => {
+  const result = await getDBConnection();
+  return result.all('SELECT * FROM dua');
+};
+
+const getCategoriesDuaFromDB = async (
+  subCategoryId: string,
+): Promise<Dua[]> => {
   const result = await getDBConnection();
   return result.all('SELECT * FROM dua WHERE subcat_id = ?', [subCategoryId]);
 };
@@ -25,4 +32,5 @@ export const StudentServices = {
   getAllCategoriesIntoDB,
   getAllSubCategoriesFromDB,
   getAllDuaFromDB,
+  getCategoriesDuaFromDB,
 };

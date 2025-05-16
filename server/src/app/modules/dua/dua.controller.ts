@@ -28,9 +28,8 @@ const getAllSubCategories = catchAsync(async (req: Request, res: Response) => {
 });
 
 const getAllDuas = catchAsync(async (req: Request, res: Response) => {
-  const { categoryId } = req.params;
 
-  const result = await StudentServices.getAllDuaFromDB(categoryId);
+  const result = await StudentServices.getAllDuaFromDB();
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
@@ -40,8 +39,22 @@ const getAllDuas = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const getAllCategoriesDuas = catchAsync(async (req: Request, res: Response) => {
+  const { categoryId } = req.params;
+
+  const result = await StudentServices.getCategoriesDuaFromDB(categoryId);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'All Categories dua is retrieved successfully',
+    data: result,
+  });
+});
+
 export const DuaControllers = {
   getAllCategories,
   getAllSubCategories,
   getAllDuas,
+  getAllCategoriesDuas,
 };

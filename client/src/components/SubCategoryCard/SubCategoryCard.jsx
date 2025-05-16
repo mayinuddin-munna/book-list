@@ -15,8 +15,9 @@ import config from "@/config";
 const SubCategoryCard = () => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [duas, setDuas] = useState([]);
 
-  console.log(categories);
+  console.log(duas);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -34,7 +35,21 @@ const SubCategoryCard = () => {
     fetchCategories();
   }, []);
 
+  useEffect(() => {
+    const fetchDuas = async () => {
+      const response = await axios.get(`${config.base_url}/all`);
+      setDuas(response.data.data);
+    };
+    fetchDuas();
+  }, []);
+
   if (loading) return <p>Loading...</p>;
+
+  const subcatMap = {
+    1: "Allah's Guidance",
+    2: "Seeking Forgiveness",
+    // Add all subcat_id → name_en mappings here
+  };
 
   return (
     <section>
@@ -64,9 +79,32 @@ const SubCategoryCard = () => {
                 </div>
               </div>
             </AccordionTrigger>
-            <AccordionContent>
+            {/* <AccordionContent>
               Coming soon: Subcategories or duas...
-            </AccordionContent>
+            </AccordionContent> */}
+            <AccordionContent>
+  {Object.entries(
+    duas
+      .filter((dua) => dua.cat_id === category.cat_id)
+      .reduce((acc, dua) => {
+        const subcatName = subcatMap[dua.subcat_id] || "Uncategorized";
+        if (!acc[subcatName]) acc[subcatName] = [];
+        acc[subcatName].push(dua);
+        return acc;
+      }, {} )
+  ).map(([subcatName, duaList]) => (
+    <div key={subcatName} className="mb-4">
+      <p className="text-primary font-semibold mb-2">{subcatName}</p>
+      <ul className="space-y-1 pl-4 border-l-2 border-dashed border-muted">
+        {duaList.map((dua) => (
+          <li key={dua.dua_id} className="text-sm text-muted-foreground">
+            ↳ {dua.dua_name_en}
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
