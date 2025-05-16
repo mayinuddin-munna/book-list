@@ -21,7 +21,7 @@ const DuaCard = () => {
     <section className="w-[54rem] col-span-5">
       <Card>
         <CardHeader className="flex flex-row mb-2">
-          <Image src={frame} />
+          <Image src={frame} alt="search icon" />
           <CardTitle className="text-primary text-base ml-3">
             1. The servant is dependent on his Lord #1
           </CardTitle>
@@ -46,14 +46,14 @@ const DuaCard = () => {
         </CardContent>
         <CardFooter className="flex justify-between">
           <div>
-            <Image src={audio} />
+            <Image src={audio} alt="audio icon" />
           </div>
           <div className="flex items-center gap-x-10">
-            <Image src={copy} />
-            <Image src={bookmark} />
-            <Image src={memorize} />
-            <Image src={share} />
-            <Image src={report} />
+            <Image src={copy} alt="copy" />
+            <Image src={bookmark} alt="bookmark" />
+            <Image src={memorize} alt="memorize" />
+            <Image src={share} alt="share" />
+            <Image src={report} alt="report" />
           </div>
         </CardFooter>
       </Card>

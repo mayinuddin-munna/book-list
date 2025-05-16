@@ -16,19 +16,19 @@ export default function Navbar() {
     <section className="w-[6rem] col-span-1 bg-background shadow-md rounded-sm flex justify-center items-center">
       <div className="flex flex-col justify-between items-center gap-y-5 py-16">
         <div className="pb-6">
-          <Image src={logo} className="w-20 h-20" />
+          <Image src={logo} alt="logo" className="w-20 h-20" />
         </div>
 
-        <Image src={home} />
-        <Image src={dua} />
-        <Image src={memorize} />
-        <Image src={bookmark} />
-        <Image src={ruqyah} />
-        <Image src={duaQA} />
-        <Image src={book} />
+        <Image src={home} alt="home" />
+        <Image src={dua} alt="dua" />
+        <Image src={memorize} alt="memorize" />
+        <Image src={bookmark} alt="bookmark" />
+        <Image src={ruqyah} alt="ruqyah" />
+        <Image src={duaQA} alt="duaQA" />
+        <Image src={book} alt="book" />
 
         <div className="pt-6">
-          <Image src={support} className="w-20 h-20" />
+          <Image src={support} alt="support" className="w-20 h-20" />
         </div>
       </div>
     </section>
